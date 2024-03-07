@@ -4,18 +4,50 @@
 ## ​Problema 3.1
  
 ### *a)*
-
+#### Relações
 ```
-... Write here your answer ...
+-> Cliente(Nome, Endereço, Num_carta, Nif)
+-> Aluguer(Número, Duração, Data)
+-> Balcão(Número, Nome, Endereço)
+-> Veículo(Matrícula, Ano, Marca)
+-> Tipo_Veiculo(Código, Designação, ArCondicionado)
+-> Ligeiro(NumLugares, Portas, Combustivel)
+-> Pesado(Peso, Passageiros)
 ```
 
 
 ### *b)* 
-
+#### Chaves Primárias
 ```
-... Write here your answer ...
+-> Cliente(Nif)
+-> Aluguer(Número)
+-> Balcão(Número)
+-> Veículo(Matrícula)
+-> Tipo_Veiculo(Código)
+-> Ligeiro(Não tem)
+-> Pesado(Não tem)
 ```
-
+#### Chaves Candidatas
+```
+-> Cliente(Nif, Num_Carta)
+-> Aluguer(Número)
+-> Balcão(Número)
+-> Veículo(Matrícula)
+-> Tipo_Veiculo(Código)
+-> Ligeiro(Não tem)
+-> Pesado(Não tem)
+```
+#### Chaves Estrangeiras
+```
+-> Cliente(Não tem)
+-> Aluguer(Cliente, Balcão, Veículo)
+-> Balcão(Não tem)
+-> Veículo(Tipo_Veiculo)
+-> Tipo_Veiculo(Similar1,Similar2)
+-> Ligeiro(S)
+-> Pesado()
+...
+```
 
 ### *c)* 
 
