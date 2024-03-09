@@ -44,22 +44,27 @@
 -> Balcão(Não tem)
 -> Veículo(Tipo_Veiculo)
 -> Tipo_Veiculo(Similar1,Similar2)
--> Ligeiro(S)
--> Pesado()
-...
+-> Ligeiro(Código)
+-> Pesado(Código)
 ```
 
 ### *c)* 
 
-![ex_3_1c!](ex_3_1c.jpg "AnImage")
+![113765_114614_ex1!](113765_114614_ex1.jpg "AnImage")
 
 
 ## ​Problema 3.2
 
 ### *a)*
-
+#### Relações
 ```
-... Write here your answer ...
+-> Airport(Airport_Code, City, State, Name)
+-> Flight_Leg(Leg_No)
+-> Flight(Number, Airline, Weekdays)
+-> Fare(Restrictions, Amount, Code)
+-> Leg_Instance(No_Of_Avail_Seats, Date)
+-> Airplane(Airplane_Id, Total_no_of_Seats)
+-> Airplane_Type(Max_seats, Type_Name, Company)
 ```
 
 
