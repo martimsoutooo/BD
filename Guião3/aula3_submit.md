@@ -134,8 +134,8 @@
 
 ### *c)* 2.3
 
-![ex03c!](ex03c.png "AnImage")
+![ex_3_3_c!](ex03c.png "AnImage")
 
 ### *d)* 2.4
 
-![ex_3_3_d!](ex_3_3d.jpg "AnImage")
+![ex_3_3_d!](ex03d.png "AnImage")
