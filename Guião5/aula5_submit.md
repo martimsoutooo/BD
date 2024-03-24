@@ -6,29 +6,30 @@
 ### *a)*
 
 ```
-Write here your answer e.g:
-(π Pname, Pnumber (project) ⨝ Pno=Pnumber (works_on)) ⨝.... 
+π Fname, Minit, Lname, Pname (employee ⨝Ssn = Essn works_on ⨝Pno=Pnumber project)
 ```
 
 
 ### *b)* 
 
 ```
-... Write here your answer ...
+temp = ρ supSsn←Ssn (π Ssn (σFname = 'Carlos' AND Minit = 'D' AND Lname = 'Gomes' (employee)))
+π Fname, Minit, Lname (temp ⨝supSsn=Super_ssn employee)
 ```
 
 
 ### *c)* 
 
 ```
-... Write here your answer ...
+π Pname, THours ((γ Pno; THours←sum(Hours) works_on) ⨝Pno = Pnumber project)
 ```
 
 
 ### *d)* 
 
 ```
-... Write here your answer ...
+temp = employee ⨝ Ssn=Essn (works_on)
+π Fname,Minit,Lname,Dno (σ Dno=3 ∧ Hours>20 (temp))
 ```
 
 
@@ -42,7 +43,8 @@ Write here your answer e.g:
 ### *f)* 
 
 ```
-... Write here your answer ...
+funcionariosDepartamento = department ⨝ Dno=Dnumber (employee)
+γ Dname;avg(Salary)->salario_medio (σ Sex='F' (funcionariosDepartamento))
 ```
 
 
@@ -56,7 +58,8 @@ Write here your answer e.g:
 ### *h)* 
 
 ```
-... Write here your answer ...
+gestoresDepartamento = employee ⨝ Mgr_ssn=Ssn (department)
+π Ssn, Fname,Minit,Lname (σ dependent.Essn = null (gestoresDepartamento ⟕Ssn=Essn (dependent)))
 ```
 
 
@@ -101,37 +104,46 @@ Write here your answer e.g:
 ### *a)*
 
 ```
-... Write here your answer ...
+π numUtente,nome (σ numPresc=null (prescricao ⟕ paciente)) 
 ```
 
 ### *b)* 
 
 ```
-... Write here your answer ...
+medicoPrecricao = medico ⨝ numSNS=numMedico (prescricao)
+γ especialidade; numPrescricoes←count(especialidade) (medicoPrecricao)
 ```
 
 
 ### *c)* 
 
 ```
-... Write here your answer ...
+farmaciaPrescricao = farmacia ⨝ nome=farmacia (prescricao)
+γ farmacia; numPrescricoes←count(farmacia) (farmaciaPrescricao)
 ```
 
 
 ### *d)* 
 
 ```
-... Write here your answer ...
+farmacosAssociados906 = π nome (σ numRegFarm=906 (farmaco))
+farmacosPrescritos906 = π presc_farmaco.nomeFarmaco (σ numRegFarm=906 (presc_farmaco))
+farmacosAssociados906-farmacosPrescritos906
 ```
 
 ### *e)* 
 
 ```
-... Write here your answer ...
+γ farmacia.nome, farmaceutica.nome; count(presc_farmaco.nomeFarmaco) -> num_farmacos
+π farmacia.nome, farmaceutica.nome, presc_farmaco.nomeFarmaco
+(farmaceutica ⨝ presc_farmaco.numRegFarm = numReg
+(farmacia ⨝ prescricao.farmacia = nome 
+π prescricao.farmacia, presc_farmaco.numRegFarm, presc_farmaco.nomeFarmaco
+(prescricao ⨝ numPrescX = numPresc (ρ numPrescX←numPresc (presc_farmaco)))))
 ```
 
 ### *f)* 
 
 ```
-... Write here your answer ...
+paciente ⨝ σ num_UU > 1 (γ numUtente; count(numUtente)->num_UU (γ numUtente, numMedico; count(numMedico)-> numPrescricoes prescricao))
 ```
