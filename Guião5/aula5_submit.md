@@ -36,7 +36,7 @@ temp = employee ⨝ Ssn=Essn (works_on)
 ### *e)* 
 
 ```
-... Write here your answer ...
+π Fname, Lname (σ Pno=null (employee ⟕ Ssn=Essn works_on))
 ```
 
 
@@ -51,7 +51,8 @@ funcionariosDepartamento = department ⨝ Dno=Dnumber (employee)
 ### *g)* 
 
 ```
-... Write here your answer ...
+func = σ count_dep > 1 (γ Essn; count(Essn) -> count_dep dependent)
+π Fname, Lname (func ⨝Essn=Ssn (employee))
 ```
 
 
@@ -66,7 +67,8 @@ gestoresDepartamento = employee ⨝ Mgr_ssn=Ssn (department)
 ### *i)* 
 
 ```
-... Write here your answer ...
+projetos = σDlocation!= 'Aveiro'∧  Plocation = 'Aveiro' (project ⨝ Dnum = Dnumber dept_location)
+π Fname,Lname,Address (employee ⨝Dno=Dnum projetos)
 ```
 
 
@@ -75,27 +77,29 @@ gestoresDepartamento = employee ⨝ Mgr_ssn=Ssn (department)
 ### *a)*
 
 ```
-... Write here your answer ...
+π nome (σ fornecedor = null (encomenda ⟗ fornecedor = nif fornecedor))
 ```
 
 ### *b)* 
 
 ```
-... Write here your answer ...
+average = γ codProd; avg(unidades)-> media (item)
+π nome, media (average ⨝ codProd = codigo produto)
 ```
 
 
 ### *c)* 
 
 ```
-... Write here your answer ...
+γ;avg(num_prod)->media (γ numEnc;count(codProd)-> num_prod (item))```
 ```
 
 
 ### *d)* 
 
 ```
-... Write here your answer ...
+tabela = γ codProd,fornecedor;sum(unidades)->qnt_total (item ⨝numEnc=numero encomenda)
+π fornecedor.nome,produto.nome,qnt_total (tabela ⨝ fornecedor = nif fornecedor ⨝ codProd = codigo produto)
 ```
 
 
