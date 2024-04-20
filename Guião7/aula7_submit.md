@@ -6,16 +6,15 @@
 ### *a)*
 
 ```
-... Write here your answer ...
-It is possible to <u>underline</u> -> {A, B,.. }
--> R1 (_A_, B, C)
--> R2 (B,F)
+Encontra-se na primeira forma normal, uma vez que existem dependências parciais. 
 ```
 
 ### *b)* 
 
 ```
-... Write here your answer ...
+2FN: Livro1(Nome_Autor, Afiliacao_Autor)
+3FN: R3(Tipo_Livro, NoPaginas, Preco)
+     R4(Editor, Endereço_Editor)
 ```
 
 
