@@ -25,21 +25,29 @@ Encontra-se na primeira forma normal, uma vez que existem dependências parciais
 ### *a)*
 
 ```
-... Write here your answer ...
+A e B
 ```
 
 
 ### *b)* 
 
 ```
-... Write here your answer ...
+2NF:
+R(_A_,_B_, C)
+R2(_A_, D, E, I, J)
+R3(_B_, F, G, H)
 ```
 
 
 ### *c)* 
 
 ```
-... Write here your answer ...
+3NF:
+R(_A_,_B_, C)
+R2(_A_, D, E)
+R3(_B_, F)
+R4(_D_, I, J)
+R5(_F_, G, H)
 ```
 
 
@@ -82,24 +90,31 @@ BCNF:
 ### *a)*
 
 ```
-... Write here your answer ...
+A e B
 ```
 
 ### *b)* 
 
 ```
-... Write here your answer ...
+R(_A_, _B_, E)
+R1(_A_, C, D)
 ```
 
 
 ### *c)* 
 
 ```
-... Write here your answer ...
+R(_A_, _B_, E)
+R1(_A_, C)
+R2(_C_, D)
+
 ```
 
 ### *d)* 
 
 ```
-... Write here your answer ...
+Já estava em BCNF por isso fica igual
+R(_A_, _B_, E)
+R1(_A_, C)
+R2(_C_, D)
 ```
