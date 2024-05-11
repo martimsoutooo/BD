@@ -23,31 +23,77 @@ Complete the following table.
 ### a)
 
 ```
-... Write here your answer ...
+ALTER TABLE mytemp ADD CONSTRAINT ridPrimary PRIMARY KEY CLUSTERED (rid)
+with (fillfactor=95, pad_index=ON);
+go
 ```
 
 ### b)
 
 ```
-... Write here your answer ...
+Time: 123522ms
+Fragmentation Percentage: 98.28%
+Page Fullness: 68.15%
 ```
 
 ### c)
 
 ```
-... Write here your answer ...
+Fillfactor = 65 {
+    Time: 45180ms
+    Fragmentation Percentage: 98.24%
+    Page Fullness: 68.33%
+}
+
+Fillfactor = 80 {
+    Time: 57796ms
+    Fragmentation Percentage: 98.99%
+    Page Fullness: 61.38%
+}
+
+
+Fillfactor = 90 {
+    Time: 53470ms
+    Fragmentation Percentage: 99.07%
+    Page Fullness: 60.32%
+}
 ```
 
 ### d)
 
 ```
-... Write here your answer ...
+Fillfactor = 65 {
+    Time: 47787ms
+    Fragmentation Percentage: 80.09%
+    Page Fullness: 1.04%
+}
+
+Fillfactor = 80 {
+    Time: 48246ms
+    Fragmentation Percentage: 87.28%
+    Page Fullness: 0.45%
+}
+
+
+Fillfactor = 90 {
+    Time: 49443ms
+    Fragmentation Percentage: 92.03%
+    Page Fullness: 0.54%
+}   
 ```
 
 ### e)
 
 ```
-... Write here your answer ...
+CREATE NONCLUSTERED INDEX IDX_at1 ON mytemp(at1);
+CREATE NONCLUSTERED INDEX IDX_at2 ON mytemp(at2);
+CREATE NONCLUSTERED INDEX IDX_at3 ON mytemp(at3);
+CREATE NONCLUSTERED INDEX IDX_lixo ON mytemp(lixo);
+
+Without indexes: 112540 ms
+With indexes: 119743 ms
+
+Remove/Insert operations take longer to be completed when adding indexes.
 ```
 
 ## ​8.3.
