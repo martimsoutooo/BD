@@ -246,7 +246,6 @@ delete from Company.Department where Dnumber=8
 ### *i)* 
 
 ```
-
     Stored Procedures: Utilizadas para operações complexas de leitura e escrita, manipulação de transações e implementação de lógica de negócio que requer controle de fluxo.
     UDFs: Utilizadas para cálculos reutilizáveis, manipulação de strings, e agregações personalizadas, especialmente quando se precisa de uma função que devolve um valor dentro de uma consulta SQL.
 Cada uma destas ferramentas oferece vantagens significativas dependendo do contexto em que são aplicadas. A escolha entre usar uma stored procedure ou uma UDF depende das necessidades específicas da operação e da lógica de negócio a ser implementada.
